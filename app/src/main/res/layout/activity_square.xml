@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SquareActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+    <EditText
+        android:id="@+id/x_field"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="please enter X value"
+        android:textSize="25sp"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textColor="#000"
+        android:layout_marginBottom="10dp"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="10dp"
+        >
+
+        <RadioButton
+            android:id="@+id/area_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Area"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            />
+
+        <RadioButton
+            android:id="@+id/perimeter_rb"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Perimeter"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/result_txt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="00.00"
+        android:textSize="40sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/result_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="result"
+        android:textSize="25sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/new_operation_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="new operation"
+        android:textSize="25sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        />
+
+
+
+
+</LinearLayout>
