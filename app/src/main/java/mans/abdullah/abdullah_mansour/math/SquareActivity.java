@@ -1,7 +1,11 @@
 package mans.abdullah.abdullah_mansour.math;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +21,7 @@ public class SquareActivity extends AppCompatActivity {
 
     double result,x;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,11 @@ public class SquareActivity extends AppCompatActivity {
         result_txt = (TextView) findViewById(R.id.result_txt);
         result_btn = (Button) findViewById(R.id.result_btn);
         new_operation_btn = (Button) findViewById(R.id.new_operation_btn);
+
+        area_rb.setEnabled(false);
+        perimeter_rb.setEnabled(false);
+        new_operation_btn.setEnabled(false);
+        new_operation_btn.setBackground(getResources().getDrawable(R.drawable.back2));
 
         result_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +57,12 @@ public class SquareActivity extends AppCompatActivity {
 
                             result = x * x;
                             result_txt.setText(result + "");
+
+                            result_btn.setEnabled(false);
+                            result_btn.setBackground(getResources().getDrawable(R.drawable.back2));
+
+                            new_operation_btn.setEnabled(true);
+                            new_operation_btn.setBackground(getResources().getDrawable(R.drawable.background));
                         } else
                         {
                             if (perimeter_rb.isChecked())
@@ -55,6 +71,12 @@ public class SquareActivity extends AppCompatActivity {
 
                                 result = x * 4;
                                 result_txt.setText(result + "");
+
+                                result_btn.setEnabled(false);
+                                result_btn.setBackground(getResources().getDrawable(R.drawable.back2));
+
+                                new_operation_btn.setEnabled(true);
+                                new_operation_btn.setBackground(getResources().getDrawable(R.drawable.background));
                             }
                             else
                                 {
@@ -62,6 +84,46 @@ public class SquareActivity extends AppCompatActivity {
                                 }
                         }
                     }
+            }
+        });
+
+        new_operation_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result = 0;
+
+                result_txt.setText("");
+                x_field.setText("");
+
+                area_rb.setEnabled(false);
+                perimeter_rb.setEnabled(false);
+
+                new_operation_btn.setEnabled(false);
+                new_operation_btn.setBackground(getResources().getDrawable(R.drawable.back2));
+
+                result_btn.setEnabled(true);
+                result_btn.setBackground(getResources().getDrawable(R.drawable.background));
+            }
+        });
+
+        x_field.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                result_txt.setText(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                area_rb.setEnabled(true);
+                perimeter_rb.setEnabled(true);
             }
         });
     }

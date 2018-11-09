@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="mans.abdullah.abdullah_mansour.math">
 
     <application
@@ -21,7 +22,7 @@
 
         <activity
             android:name=".SquareActivity"
-            android:label="Square"
+            android:label="@string/square_name"
             >
 
         </activity>

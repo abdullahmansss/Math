@@ -1,6 +1,7 @@
 package mans.abdullah.abdullah_mansour.math;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         square_btn = (LinearLayout) findViewById(R.id.square_btn);
 
+
         square_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,6 +25,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(n);
             }
         });
-
     }
 }
